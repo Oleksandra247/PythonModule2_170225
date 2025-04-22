@@ -4,30 +4,27 @@
 
 # При решении задачи необходимо использовать функцию расстояния между двумя точками.
 
+
+import math
+
 def distance(x1, y1, x2, y2):
-    # TODO: тело, которое вы реализовали на практической работе
-    pass
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-
- Функция расстояния между двумя точками
-def distance(x1, y1, x2, y2):
-    return ((x2 - x1)**2 + (y2 - y1)**2) ** 0.5
-
-# Задаём координаты трёх точек
-xa, ya = 1, 2
-xb, yb = 4, 6
+xa, ya = 1, 1
+xb, yb = 3, 3
 xc, yc = 2, 1
 
-# Считаем длины отрезков
 ab = distance(xa, ya, xb, yb)
 bc = distance(xb, yb, xc, yc)
 ac = distance(xa, ya, xc, yc)
 
-# Находим самый короткий отрезок
-if ab <= bc and ab <= ac:
-    shortest = "AB"
-elif bc <= ab and bc <= ac:
-    shortest = "BC"
+short = min(ab, bc, ac)
+if short == ab:
+    segment = "AB"
+elif short == bc:
+    segment = "BC"
 else:
-    shortest = "AC"
-print("Самый короткий отрезок:",  shortest)  # Выводим название отрезка, например “АС”.
+    segment = "AC"
+
+
+print("Самый короткий отрезок:", segment)
