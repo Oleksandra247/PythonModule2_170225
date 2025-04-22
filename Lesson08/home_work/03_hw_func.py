@@ -1,17 +1,18 @@
 # Даны координаты центров двух окружностей (x1; y1) (x2; y2) и и их радиусы  R1 и R2.
 # Находится ли одна окружность целиком внутри другой
 
-# TODO: import math
+def lucky_ticket(ticket_number):
+    str_ticket = str(ticket_number)
+    if len(str_ticket) != 6:
+        return False
+    
+    frst = int([0]str_ticket) + int(str_ticket[1]) + int(str_ticket[2])
+    last = int(str_ticket[3]) + int(str_ticket[4]) + int(str_ticket[5])
 
-# Даны координаты центров и радиусы
-x1, y1, R1 = 0, 0, 5
-x2, y2, R2 = 1, 1, 2
+    return frst == last
 
-# Считаем расстояние между центрами окружностей
-distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-# Проверяем, находится ли одна окружность полностью внутри другой
-if distance + min(R1, R2) <= max(R1, R2):
-    print("Одна окружность находится внутри другой")
-else:
-    print("Окружности не вложены друг в друга")
+# Тестируем функцию
+print(lucky_ticket(123006))
+print(lucky_ticket(12321))
+print(lucky_ticket(436751)) 
