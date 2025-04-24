@@ -5,26 +5,15 @@
 # Визуализируйте сгенерированный лес, например, выводя символы "T" для деревьев и "." для пустых пространств.
 import random
 
-# Пример результата:
-forest = [['.', 'T', '.', '.', 'T', '.', '.', 'T', '.', '.'],
-          ['T', '.', '.', 'T', '.', '.', '.', '.', 'T', '.'],
-          ['.', '.', 'T', '.', '.', 'T', '.', '.', '.', 'T'],
-          ['.', 'T', '.', '.', '.', '.', 'T', '.', '.', '.'],
-          ['T', '.', '.', 'T', '.', 'T', '.', '.', 'T', '.'],
-          ['.', '.', 'T', '.', '.', '.', '.', 'T', '.', '.'],
-          ['T', '.', '.', '.', 'T', '.', '.', '.', '.', 'T'],
-          ['.', 'T', '.', 'T', '.', '.', 'T', '.', '.', '.'],
-          ['T', '.', '.', '.', '.', 'T', '.', 'T', '.', '.'],
-          ['.', '.', 'T', '.', 'T', '.', '.', '.', 'T', '.']]
-
 def generate_forest(rows: int, columns: int) -> list:
-    new_forest = []
+    forest = []
     for i in range(rows):
         line = [random.choice([".", "T"]) for i in range(columns)]
-        new_forest.append(line)
-    return new_forest
+        forest.append(line)
+    return forest
 
 
-forest = generate_forest(8, 8)
+forest = generate_forest(10, 10)
+
 for line in forest:
     print(" ".join(line))
