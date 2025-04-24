@@ -1,5 +1,5 @@
 summa = 0
-with open("info.txt", "r") as f:
+with open("data/info.txt", "r") as f:
     for line in f:
         try:
             summa += int(line.strip())
