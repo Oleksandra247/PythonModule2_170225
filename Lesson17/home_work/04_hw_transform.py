@@ -9,3 +9,12 @@ log_entries = [
     "Another log",
     "Contact us at support@test.co.uk"
 ]
+
+e = []
+
+for i in log_entries:
+    if "@" in i:
+        email = i.split(" ")[-1].lower()
+        e.append(email)
+
+print(e)
