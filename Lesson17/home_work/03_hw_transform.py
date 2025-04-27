@@ -9,3 +9,11 @@ students = [
     {'name': 'David', 'grade': 4.2},
     {'name': 'Eve', 'grade': 4.91}
 ]
+
+f = []
+for i in students:
+    if i["grade"] > 4.5:
+        i["grade"] = round(i["grade"], 2)
+        f.append(i)
+
+print(f)
