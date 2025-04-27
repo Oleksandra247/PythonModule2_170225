@@ -17,5 +17,13 @@
 # 3. Функция должна быть реализована как генераторная функция, использующая ключевое слово yield для возврата каждого сгенерированного пароля.
 # 4. Генератор должен быть способен генерировать неограниченное количество паролей (пока его запрашивают).
 
+import random
+
 def generate_random_password(length: int, chars: str):
-    pass
+    while True:
+        yield "".join(random.choice(chars) for i in range(length))
+
+generator = generate_random_password(10, "abcdefghijkABCYWZ12334567890")
+
+for i in range(10):
+    print(next(generator))
